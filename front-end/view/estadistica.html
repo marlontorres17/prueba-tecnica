@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estadistica</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src='../js/estadistica.js'></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../css/boton.css">
+</head>
+<body>
+    <div class="container">
+        <div id="inputData">
+           
+            <div id="buttonData">
+                <br>
+                <button name="btnCliente" onclick="ClienteTotal()"  class="btn btn-success">clientes totales</button>
+        <input disabled type="text" name="clientes" id="clientes">
+
+        <button name="btnProducto" onclick="ProductoTotal()"  class="btn btn-success">productos totales</button>
+        <input disabled type="text" name="productos" id="productos">
+
+        <button name="btnVentas" onclick="VentaTotal()"  class="btn btn-success">ventas totales</button>
+        <input disabled type="text" name="ventas" id="ventas">
+            </div>
+            <a href="../index.html" class="back-button" onclick="history.back(); return false;">Atrás</a>
+
+            <div id="outputData">
+                <br>
+                <table class="table table-hover">
+                    <thead>
+                        <tr class="table-dark">
+                            <th>Nombre Producto</th>
+                            <th>Descripcion</th>
+                            <th>Cantidad</th>
+                            <th>precio</th>
+                            <th>porcentaje iva</th>
+                            <th>porcentaje descuento</th>
+                            <th>State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultData">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        
+            loadData();
+
+    </script>
+
+</body>
+</html>

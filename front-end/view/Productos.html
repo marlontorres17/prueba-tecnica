@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <!-- librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src='../js/productos.js'></script>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <br>   
+                <fieldset>
+                    <h1><i class="fas fa-box"></i> productos</h1>
+                <div class="form-group row">
+                    <input type="hidden" name="id" id="id" value="">
+                    <label for="correo" class="col-sm-2 col-form-label form-label"><i class=""></i> Nombre Producto</label>
+                    <div class="col-sm-10"></div>
+                    <input type="text" class="form-control" name="nombreProducto" id="nombreProducto" value="" placeholder="nombre del producto">
+                </div>
+                <div class="form-group row">
+                    <label for="telefono" class="col-sm-2 col-form-label form-label"><i class=""></i> descripcion</label>
+                    <div class="col-sm-10"></div>
+                    <input type="text" class="form-control" name="descripcion" id="descripcion" value="" placeholder="descripcion">
+                </div>
+
+                <div class="form-group row">
+                    <label for="telefono" class="col-sm-2 col-form-label form-label"><i class=""></i> Cantidad</label>
+                    <div class="col-sm-10"></div>
+                    <input type="text" class="form-control" name="cantidad" id="cantidad" value="" placeholder="ingrese cantidad">
+                </div>
+
+                <div class="form-group row">
+                    <label for="telefono" class="col-sm-2 col-form-label form-label"><i class=""></i> Precio</label>
+                    <div class="col-sm-10"></div>
+                    <input type="text" class="form-control" name="precio" id="precio" value="" placeholder="precio">
+                </div>
+
+                <div class="form-group row">
+                    <label for="telefono" class="col-sm-2 col-form-label form-label"><i class=""></i> porcentaje iva</label>
+                    <div class="col-sm-10"></div>
+                    <input type="text" class="form-control" name="porcentajeIva" id="porcentajeIva" value="" placeholder="porcentaje del Iva">
+                </div>
+
+                <div class="form-group row">
+                    <label for="telefono" class="col-sm-2 col-form-label form-label"><i class=""></i> porcentaje descuento</label>
+                    <div class="col-sm-10"></div>
+                    <input type="text" class="form-control" name="porcentajeDescuento" id="porcentajeDescuento" value="" placeholder="porcentaje del Descuento">
+                </div>
+                
+                
+                <div class="form-group row">
+                    <label for="state" class="col-sm-2 col-form-label form-label"><i class="fas fa-check"></i> Estado</label>
+                    <div class="col-sm-10">
+                        <select class="form-select" id="state">
+                            <option selected>--Seleccione--</option>
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+        </div>
+                </fieldset>
+            </form>
+            
+    </div>
+    <div id="buttonData">
+        <br>
+        <button name="btnAgregar" onclick="save()" class="btn btn-success">Agregar</button>
+        <a href="../index.html" class="back-button" onclick="history.back(); return false;">Atrás</a>
+
+    </div>
+    <div id="outputData">
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr class="table-dark">
+                    <th>Nombre Producto</th>
+                    <th>Descripcion</th>
+                    <th>Cantidad</th>
+                    <th>precio</th>
+                    <th>porcentaje iva</th>
+                    <th>porcentaje descuento</th>
+                    <th>State</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resultData">
+            </tbody>
+        </table>
+    </div>
+   </div>
+
+</body>
+
+<script>
+    loadData();
+    </script>
+</html>
