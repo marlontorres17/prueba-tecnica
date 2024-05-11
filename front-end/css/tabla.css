@@ -1,0 +1,27 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #754040;
+}
+
+.table .btn {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.table .btn i {
+    margin-right: 4px;
+}
+
+.table {
+    background-color: #754040;
+}

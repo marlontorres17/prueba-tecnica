@@ -1,11 +1,11 @@
 body {
-    background-color: #3d534f;
+    background-color: #423235;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #ede2f388;
+    background-color: #faf2f2;
     border-radius: 15px;
     padding: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);

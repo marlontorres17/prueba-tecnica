@@ -18,10 +18,11 @@ function save(){
       contentType : 'application/json',
       data : jsonData,
       success : function(data){
-          alert("Registro guardado.");
-          loadData();
-          clearData();
-      },
+        Swal.fire('¡Registro exitoso!', '', 'success').then(function() {
+            loadData();
+            clearData();
+        });
+    },
       error : function(error){
           console.error('Error al guardar: ',error);
       }
@@ -48,14 +49,15 @@ function update(){
       contentType: 'application/json',
       data: jsonData,
       success : function(result){
-          alert("Actualizado.");
-          loadData(); 
-          clearData();
+        Swal.fire('¡Actualización exitosa!', '', 'success').then(function() {
+            loadData();
+            clearData();
 
-          var btnAgregar = $('button[name="btnAgregar"]');
-          btnAgregar.text('Agregar');
-          btnAgregar.attr('onclick', 'save()');
-      },
+            var btnAgregar = $('button[name="btnAgregar"]');
+            btnAgregar.text('Agregar');
+            btnAgregar.attr('onclick', 'save()');
+        });
+    },
       error : function(error){
           console.error('Error al actualizar: ', error);
       }
@@ -175,9 +177,10 @@ function deleteById(id) {
           "Content-Type": "application/json"
       }
   }).done(function(result) {
-      alert("Registro eliminado exitoso");
-      loadData();
-      clearData();
+    Swal.fire('¡Registro eliminado!', '', 'success').then(function() {
+        loadData();
+        clearData();
+    });
   }).fail(function(xhr, status, error) {
       console.error("Error al eliminar el registro:", error);
   });

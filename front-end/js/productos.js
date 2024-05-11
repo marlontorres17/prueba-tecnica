@@ -17,9 +17,10 @@ function save() {
         contentType: 'application/json',
         data: jsonData,
         success: function (data) {
-            alert("Registro exitoso");
-            loadData();
-            clearData();
+            Swal.fire('¡Registro exitoso!', '', 'success').then(function() {
+                loadData();
+                clearData();
+            });
         },
         error: function (error) {
             console.error('Error al registrar', error)
@@ -50,14 +51,14 @@ function update() {
         contentType: 'application/json',
         data: jsonData,
         success: function (result) {
-            alert("Actualización exitosa");
-            loadData();
-            clearData();
-
-            // actualizar botón
-            var btnAgregar = $('button[name="btnAgregar"]');
-            btnAgregar.text('Agregar');
-            btnAgregar.attr('onclick', 'save()');
+            Swal.fire('¡Actualización exitosa!', '', 'success').then(function() {
+                loadData();
+                clearData();
+    
+                var btnAgregar = $('button[name="btnAgregar"]');
+                btnAgregar.text('Agregar');
+                btnAgregar.attr('onclick', 'save()');
+            });
         },
         error: function (error) {
             console.error("Error al actualizar el registro:", error);
@@ -135,9 +136,10 @@ function deleteById(id) {
             "Content-Type": "application/json"
         }
     }).done(function (result) {
-        alert("Registro eliminado exitoso");
-        loadData();
-        clearData();
+        Swal.fire('¡Registro eliminado!', '', 'success').then(function() {
+            loadData();
+            clearData();
+        });
     }).fail(function (xhr, status, error) {
         console.error("Error al eliminar el registro:", error);
     });
