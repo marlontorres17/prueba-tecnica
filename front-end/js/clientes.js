@@ -110,13 +110,13 @@ function findById(id) {
         dataType: 'json',
         success: function (data) {
             $('#id').val(data.data.id);
-            $('#name').val(data.data.tipoIdentificacion);
-            $('#email').val(data.data.identificacion);
-            $('#phone').val(data.data.nombreCliente);
-            $('#phone').val(data.data.apellidoCliente);
-            $('#phone').val(data.data.telefono);
-            $('#phone').val(data.data.direccion);
-            $('#phone').val(data.data.ciudad);
+            $('#tipoIdentificacion').val(data.data.tipoIdentificacion);
+            $('#identificacion').val(data.data.identificacion);
+            $('#nombreCliente').val(data.data.nombreCliente);
+            $('#apellidoCliente').val(data.data.apellidoCliente);
+            $('#telefono').val(data.data.telefono);
+            $('#direccion').val(data.data.direccion);
+            $('#ciudad').val(data.data.ciudad);
 
             $('#state').val(data.data.state === true ? 1 : 0);
 

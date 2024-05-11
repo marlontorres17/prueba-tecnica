@@ -46,35 +46,46 @@ function VentaTotal(){
     });
 }
 
-function loadData() {
+function loadTop() {
     $.ajax({
-        url: 'http://localhost:9000/prueba/v1/api/productos',
+        url: 'http://localhost:9000/prueba/v1/api/productos/top',
         method: 'GET',
         dataType: 'json',
         success: function (response) {
             var html = '';
-            var data = response.data;
-            if (Array.isArray(data)) {
-                data.forEach(function (item) {
+            if (Array.isArray(response)) {
+                response.forEach(function (item) {
                     html += `<tr>
                     <td>${item.nombreProducto}</td>
-                    <td>${item.descripcion}</td>
+                    <td>${item.descripcion}n</td>
                     <td>${item.cantidad}</td>
                     <td>${item.precio}</td>
                     <td>${item.porcentajeIva}</td>
                     <td>${item.porcentajeDescuento}</td>
                     <td>${item.state === true ? 'Activo' : 'Inactivo'}</td>
-                   
                     </tr>`;
+
+
+
+
                 });
             } else {
-                console.error('el atributo "data" no es un arreglo: ', data);
+                html += `<tr>
+                    <td>${response.nombreProducto}</td>
+                    <td>${response.descripcion}</td>
+                    <td>${response.cantidad}</td>
+                    <td>${response.precio}</td>
+                    <td>${response.porcentajeIva}</td>
+                    <td>${response.porcentajeDescuento}</td>
+                    <td>${item.state === true ? 'Activo' : 'Inactivo'}</td>
+
+                    
+                    </tr>`;
             }
             $('#resultData').html(html);
         },
         error: function (error) {
-            console.error('Error al registrar', error)
+            console.error('Error al obtener a Colombia', error)
         }
-
     });
 }

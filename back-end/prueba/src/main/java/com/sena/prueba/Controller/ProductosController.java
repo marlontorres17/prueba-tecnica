@@ -1,5 +1,7 @@
 package com.sena.prueba.Controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,5 +23,10 @@ public class ProductosController extends ABaseController<Productos,IProductosSer
 		 public Integer totales() {
 			 return service.TotalDeProductos();
 		 }
+
+		 @GetMapping("/top")
+         public List<Productos> getTop() {
+        return service.getTop();
+    }
 
 }

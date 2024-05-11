@@ -1,5 +1,7 @@
 package com.sena.prueba.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +25,11 @@ public class ProductosService extends ABaseService <Productos> implements IProdu
 	        return repository.getTotalProductos();
 	       
 	    }
-    
+
+      ;
+
+    @Override
+    public List<Productos> getTop() {
+        return repository.findTop();
+    }
 }
